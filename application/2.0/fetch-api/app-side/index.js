@@ -22,13 +22,13 @@ const fetchData = async (ctx) => {
     // Requesting network data using the fetch API
     // The sample program is for simulation only and does not request real network data, so it is commented here
     // Example of a GET method request
-    // const { body: { data = {} } = {} } = await fetch({
-    //   url: 'https://xxx.com/api/xxx',
-    //   method: 'GET'
-    // })
+    const { body: { data = {} } = {} } = await fetch({
+        url: 'https://cat-fact.herokuapp.com/facts',
+        method: 'GET'
+      })
     // Example of a POST method request
     // const { body: { data = {} } = {} } = await fetch({
-    //   url: 'https://xxx.com/api/xxx',
+    //   url: 'https://cat-fact.herokuapp.com',
     //   method: 'POST',
     //   headers: {
     //     'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const fetchData = async (ctx) => {
     // })
 
     // A network request is simulated here
-    const { body: { data = {} } = {} } = await mockAPI()
+    //const { body: { data = {} } = {} } = await mockAPI()
 
     ctx.response({
       data: { result: data },
